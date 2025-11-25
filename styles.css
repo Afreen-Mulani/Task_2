@@ -1,0 +1,51 @@
+:root{
+  --bg:#f7f7fb;
+  --card:#ffffff;
+  --muted:#6b6f76;
+  --accent:#4b9be6;
+  --done:#9ea9b4;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:#222}
+.app{
+  max-width:520px;margin:48px auto;padding:20px;background:var(--card);
+  border-radius:12px;box-shadow:0 8px 24px rgba(20,20,30,.06)
+}
+h1{text-align:center;margin:0 0 18px;font-size:1.6rem}
+.task-form{display:flex;gap:8px}
+#task-input{
+  flex:1;padding:10px 12px;border-radius:8px;border:1px solid #e5e7eb;font-size:1rem;
+  outline:none
+}
+#task-input:focus{box-shadow:0 0 0 3px rgba(75,155,230,.12);border-color:var(--accent)}
+#add-btn{
+  background:var(--accent);border:none;color:white;padding:10px 14px;border-radius:8px;cursor:pointer;
+  font-weight:600
+}
+.controls{display:flex;justify-content:space-between;align-items:center;margin:12px 0}
+.filters{display:flex;gap:8px}
+.filter-btn{background:transparent;border:1px solid transparent;padding:6px 8px;border-radius:8px;cursor:pointer}
+.filter-btn.active{border-color:rgba(75,155,230,.2);background:rgba(75,155,230,.06)}
+.task-list{list-style:none;padding:0;margin:0}
+.task-item{
+  display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;border:1px solid #f0f0f0;margin-bottom:8px;
+  transition:background .12s,opacity .12s;
+}
+.task-item .check{width:18px;height:18px;border-radius:4px;border:1px solid #cfd6df;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.task-item.completed{opacity:.65}
+.task-item .label{flex:1;word-break:break-word;cursor:text}
+.task-item.completed .label{text-decoration:line-through;color:var(--done)}
+.remove-btn{background:transparent;border:none;color:var(--muted);cursor:pointer;padding:6px;border-radius:6px}
+.remove-btn:hover{color:#e55656}
+.edit-input{width:100%;padding:6px;border-radius:6px;border:1px solid #e6eef8}
+
+.footer-actions{display:flex;justify-content:flex-end;margin-top:8px}
+#clear-completed{background:transparent;border:1px solid #eee;padding:8px 10px;border-radius:8px;cursor:pointer}
+
+@media (max-width:420px){
+  .app{margin:20px;padding:14px}
+  h1{font-size:1.2rem}
+  #add-btn{padding:8px}
+}
